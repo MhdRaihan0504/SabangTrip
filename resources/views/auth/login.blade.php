@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="h-screen flex items-center justify-center">
+
     <div class="bg-[#EEE9DA] bg-opacity-70 p-6 rounded shadow-lg w-1/3 flex items-center justify-center">
         <div class="bg-[#EEE9DA] p-6 rounded shadow-lg w-full">
             <div class="flex justify-center mb-4">
