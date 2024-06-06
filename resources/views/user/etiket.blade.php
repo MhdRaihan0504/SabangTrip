@@ -24,7 +24,7 @@
             </div>
             <div class="text-right">
                 <p class="text-lg font-semibold text-blue-600">Rp. 45.000</p>
-                @if ($etiket->status == 'pending')
+                @if ($etiket->status == 'Pending')
                 <p class="text-red-500">{{ $etiket->status }}</p>
                 @else
                 <p class="text-green text-green-500">{{ $etiket->status }}</p>
@@ -60,8 +60,8 @@
         </div>
         <div class="text-center mt-4">
             <p class="text-xl font-bold text-blue-600">{{ $etiket->time }}</p>
-            @if ($etiket->status == 'pending')
-            <a href="/payment">
+            @if ($etiket->status == 'Pending')
+            <a href="{{ route('payment', $etiket->id) }}">
                 <button class="bg-blue-500 text-white text-center py-2 px-4 rounded-lg shadow hover:bg-blue-600">
                     Payment
                 </button>
@@ -69,7 +69,7 @@
             @elseif ($etiket->status == 'Process')
 
             @else
-            <a href="/show">
+            <a href="{{ route('showTicket', $etiket->id) }}">
                 <button class="bg-blue-500 text-white text-center py-2 px-4 rounded-lg shadow hover:bg-blue-600">
                     Show
                 </button>

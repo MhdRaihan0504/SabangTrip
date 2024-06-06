@@ -7,10 +7,12 @@
     <h1 class="text-2xl font-bold mb-2">Book your E-Tiket Now</h1>
     <p class="mb-6">So our team can reach out to you on time</p>
 
-    <form action="/tiket" method="POST">
+    <form action="{{ route('tiket.store') }}" method="POST">
         @csrf
 
         <input type="hidden" name="nama" id="nama" value="{{ Auth::user()->nama }}">
+        <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">
+        
         <div class="mb-4">
             <label for="destination" class="block text-gray-700">Destination</label>
             <select id="destination" name="destination" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
