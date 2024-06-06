@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="/resources/js/app.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title> {{$title}} | Sabang Trip </title>
     @vite('resources/css/app.css')
 </head>
@@ -25,7 +27,7 @@
 
 
 
-
+@include('sweetalert::alert')
     <main class="min-h-screen">
         @yield('content')
 
