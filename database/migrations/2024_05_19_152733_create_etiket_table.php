@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('etiket', function (Blueprint $table) {
             $table->id()->autoIncrement()->primary();
+            $table->unsignedBigInteger('user_id');
             $table->string('nama');
             $table->string('destination');
             $table->date('date');
@@ -20,6 +21,9 @@ return new class extends Migration
             $table->string('occupant');
             $table->string('email');
             $table->string('status')->default('Pending');
+            $table->string('image')->nullable();
+
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
