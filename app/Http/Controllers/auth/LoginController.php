@@ -24,6 +24,9 @@ namespace App\Http\Controllers\auth;
              'email' => 'required',
              'password' => 'required'
          ]);
+
+         // toastr 
+         toastr()->success('Login Berhasil');
   
          // if user is exist in database then we will redirect to dashboard page and activate middleware auth page
   
@@ -86,6 +89,8 @@ namespace App\Http\Controllers\auth;
          request()->session()->invalidate();
   
          request()->session()->regenerateToken();
+
+            toastr()->error('Logout Berhasil');
   
          return redirect('/');
      }
