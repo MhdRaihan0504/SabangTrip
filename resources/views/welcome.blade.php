@@ -8,7 +8,7 @@
         class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-black bg-opacity-50">
         <div class="my-52 ml-44">
-            <h1 class="text-white text-8xl font-bold">SABANGTRIP</h1>
+            <h1 class="typed-output text-white text-8xl font-bold">SABANGTRIP</h1>
             <p class="text-white text-4xl w-2/3 my-5 leading-normal">"Unforgettable adventures are available on
                 SabangTrip!
                 Discover exotic destinations, enjoy the beauty of nature,
