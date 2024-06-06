@@ -9,11 +9,17 @@ class Etiket extends Model
 {
     use HasFactory;
 
+    protected $table = 'etiket';
+
     protected $fillable = [
+        'user_id',
+        'nama',
         'destination',
         'date',
         'time',
         'occupant',
-        'email'
+        'email',
+        'image',
+        'status'
     ];
 }
