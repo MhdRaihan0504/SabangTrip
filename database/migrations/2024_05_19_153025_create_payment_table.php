@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('payment', function (Blueprint $table) {
             $table->id()->autoIncrement()->primary();
-            $table->string('id_etiket')->foreign('id_etiket')->references('id')->on('etiket');
-            $table->string('bukti_pembayaran');
-
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('etiket_id');
+            $table->string('image')->nullable();
+            
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('etiket_id')->references('id')->on('etiket');
+            
             $table->timestamps();
         });
     }
