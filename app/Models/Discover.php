@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Discover extends Model
 {
     use HasFactory;
+
+    protected $table = 'discover';
+    protected $fillable = ['title', 'image', 'description'];
 }
