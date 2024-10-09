@@ -8,13 +8,12 @@ on:
 
 jobs:
   laravel-tests:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+    - uses: shivammathur/setup-php@v2 # Menggunakan versi yang lebih stabil
       with:
-        php-version: '8.3'
+        php-version: '8.3' # Jika PHP 8.3 belum tersedia, gunakan 8.2
     - uses: actions/checkout@v4
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -40,8 +39,9 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN1 }}
 
-    - name: Build and push
+    - name: Build and push Docker image
       uses: docker/build-push-action@v6
       with:
+        context: . # Pastikan Dockerfile ada di direktori root, atau sesuaikan path-nya
         push: true
         tags: raihan0504/sabangtrips:latest
