@@ -1,5 +1,5 @@
-# Menggunakan image PHP sebagai base
-FROM php:8.3-fpm
+# Menggunakan image PHP 8.2 sebagai base
+FROM php:8.2-fpm
 
 # Install dependensi sistem
 RUN apt-get update && apt-get install -y \
