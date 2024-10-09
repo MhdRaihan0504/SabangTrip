@@ -42,6 +42,9 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v6
       with:
-        context: . # Pastikan Dockerfile ada di direktori root, atau sesuaikan path-nya
         push: true
         tags: raihan0504/sabangtrips:latest
+
+
+
+
