@@ -22,3 +22,4 @@ WORKDIR /var/www
 
 # Install aplikasi Laravel
 RUN composer install --no-scripts -vvv
+
