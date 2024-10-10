@@ -16,11 +16,21 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
-# Menyalin kode aplikasi
-COPY . /var/www
-
 # Set working directory
 WORKDIR /var/www
 
-# Install aplikasi Laravel
-RUN composer install --no-scripts --no-autoloader
+# Menyalin kode aplikasi
+COPY . .
+
+# Install aplikasi Laravel menggunakan Composer
+RUN composer install --prefer-dist --no-scripts --no-autoloader --optimize-autoloader --no-dev
+
+# Ubah permission pada folder yang dibutuhkan Laravel
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache \
+    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+
+# Expose port 9000 untuk PHP-FPM
+EXPOSE 9000
+
+# Jalankan PHP-FPM
+CMD ["php-fpm"]
