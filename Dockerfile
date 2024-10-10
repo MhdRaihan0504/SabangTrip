@@ -23,7 +23,7 @@ WORKDIR /var/www
 COPY . .
 
 # Install aplikasi Laravel menggunakan Composer
-RUN composer install --prefer-dist --no-scripts --no-autoloader --optimize-autoloader --no-dev
+RUN composer install --prefer-dist --no-dev
 
 # Ubah permission pada folder yang dibutuhkan Laravel
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache \
