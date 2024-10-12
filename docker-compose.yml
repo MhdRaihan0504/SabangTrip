@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
     working_dir: /var/www/html
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     environment:
       APP_ENV: local
@@ -32,7 +32,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - app
