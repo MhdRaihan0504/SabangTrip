@@ -51,5 +51,7 @@ jobs:
     - name: Build and Push to Docker Hub
       uses: docker/build-push-action@v6
       with:
+        context: ./docker/php           # Menentukan konteks build
+        file: ./docker/php/Dockerfile   # Menentukan lokasi Dockerfile
         push: true
         tags: raihan0504/sabangtrips:latest
