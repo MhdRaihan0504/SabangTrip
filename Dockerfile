@@ -14,11 +14,10 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql gd zip
 
-
 # Tambahkan pengguna dan grup www-data
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data || \
     { groupadd -g 1000 www-data; useradd -u 1000 -g www-data -m -s /bin/bash www-data; }
-    
+
 # Install Composer untuk mengelola dependensi PHP
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
